@@ -19,33 +19,60 @@ export const META = {
 export const PROJECTS = [
   {
     id: 1,
+    title: "Ekrily — Real Estate Platform",
+    description: "A real-estate platform linking students and property owners for long-term rentals. Features secure authentication, property listings, 360° virtual tours, intelligent co-living matching, and AI recommendations.",
+    tech: ["Next.js", "Supabase", "Tailwind CSS", "Cloudinary", "PostgreSQL"],
+    github: null,
+    image: "/projects/ekrily.png",
+    status: "coming-soon",
+    year: "2025"
+  },
+  {
+    id: 2,
+    title: "End-to-End MLOps Pipeline",
+    description: "Modular ML pipeline for EV demand forecasting with automated ingestion, feature engineering, and model training. Deployed Dockerized FastAPI service with Prometheus/Grafana observability and serverless batch inference.",
+    tech: ["Python", "FastAPI", "Docker", "Prometheus", "Grafana", "AWS Lambda", "GitHub Actions"],
+    github: "https://github.com/zahr888/mlops-ev-charging-predictor",
+    image: "/projects/mlops.png",
+    status: "public",
+    year: "2025"
+  },
+  {
+    id: 3,
+    title: "Event-Driven Kubernetes Autoscaler",
+    description: "Python-based controller to scale Kubernetes pods based on SQS queue message counts. Built microservices with Producer/Consumer services using Docker, Kind, and LocalStack for local development.",
+    tech: ["Python", "Kubernetes", "Docker", "AWS SQS", "LocalStack", "GitHub Actions"],
+    github: "https://github.com/zahr888/elastic-scaler",
+    image: "/projects/k8s-autoscaler.png",
+    status: "public",
+    year: "2025"
+  },
+  {
+    id: 4,
     title: "BH App Catalogue",
     description: "A comprehensive application catalogue showcasing modern web development practices with full-stack capabilities.",
     tech: ["React", "Node.js", "Express", "MongoDB", "Docker"],
     github: "https://github.com/zahr888/bh-app-catalogue",
-    status: "public"
-  },
-  {
-    id: 2,
-    title: "AI-Powered Startup Platform",
-    description: "Revolutionary platform leveraging AI/ML for automated business insights and predictive analytics.",
-    tech: ["Next.js", "Python", "TensorFlow", "AWS", "PostgreSQL"],
-    github: null,
-    status: "development"
+    image: "/projects/bh-catalogue.png",
+    status: "public",
+    year: "2024"
   }
 ]
 
 export const SKILLS = {
-  development: [
-    "Next.js", "Tailwind CSS", "HTML/CSS", "JavaScript", "TypeScript",
-    "PostgreSQL", "Supabase", "MySQL", "Java", "Python"
-  ],
-  devops: [
-    "Linux", "Docker", "Kubernetes", "NGINX", "GitHub Actions",
-    "Terraform", "AWS", "Git/GitHub"
+  mlops: [
+    "Docker", "Linux", "GitHub Actions", "LocalStack", "AWS", "Prometheus",
+    "Grafana", "NGINX", "Kubernetes", "Terraform"
   ],
   ml: [
-    "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn"
+    "Python", "Scikit-learn", "XGBoost", "LightGBM", "Pandas", "NumPy",
+    "Matplotlib", "Seaborn", "Parquet"
+  ],
+  backend: [
+    "FastAPI", "PostgreSQL", "Supabase", "SQL"
+  ],
+  tools: [
+    "Git/GitHub", "VS Code", "Figma"
   ]
 }
 

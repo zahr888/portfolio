@@ -10,7 +10,7 @@ export default function Hero({ meta }) {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-12 lg:pr-80 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center px-6 py-12 lg:pr-32 relative overflow-hidden">
       {/* Subtle gradient background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 -left-32 w-96 h-96 bg-soft-blue/40 rounded-full blur-3xl animate-float"></div>
