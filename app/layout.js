@@ -6,6 +6,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Hammami Med Zahreddin - Portfolio',
   description: 'DevOps & MLOps Engineer. I design seamless developer workflows and production-ready AI systems.',
+  icons: {
+    icon: '/portfolio/favicon.svg',
+    shortcut: '/portfolio/favicon.svg',
+    apple: '/portfolio/favicon.svg',
+  },
 }
 
 export default function RootLayout({ children }) {

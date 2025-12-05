@@ -81,16 +81,19 @@ export default function Home() {
   const sectionsRef = useRef([])
 
   useEffect(() => {
-    // Auto-download CV on page load
+    // Auto-download CV on page load with delay for reliability
     const hasDownloaded = sessionStorage.getItem('cvDownloaded')
     if (!hasDownloaded) {
-      const link = document.createElement('a')
-      link.href = META.cvLink
-      link.download = 'resume-Hammami-Zahreddin.pdf'
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-      sessionStorage.setItem('cvDownloaded', 'true')
+      setTimeout(() => {
+        const link = document.createElement('a')
+        link.href = META.cvLink
+        link.download = 'resume-Hammami-Zahreddin.pdf'
+        link.style.display = 'none'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        sessionStorage.setItem('cvDownloaded', 'true')
+      }, 1000) // 1 second delay for page to fully load
     }
 
     const observer = new IntersectionObserver(
