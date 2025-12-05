@@ -44,20 +44,20 @@ export default function Hero({ meta }) {
           </div>
         </div>
 
-        {/* Greeting */}
-        <p className="text-muted text-lg md:text-xl mb-4 font-medium tracking-wide">
-          Hello, I'm
-        </p>
-
         {/* Name */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-dark">
+        <h1 className="text-5xl md:text-7xl font-bold mb-4 text-dark whitespace-nowrap">
           <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent bg-[length:200%_auto] hover:animate-shimmer">
             {meta.name}
           </span>
         </h1>
 
+        {/* Title */}
+        <p className="text-xl md:text-2xl text-muted font-medium mb-8 tracking-wide">
+          {meta.title}
+        </p>
+
         {/* Description */}
-        <p className="text-xl md:text-2xl text-muted mb-12 max-w-2xl mx-auto text-balance leading-relaxed">
+        <p className="text-lg md:text-xl text-muted/80 mb-12 max-w-3xl mx-auto text-balance leading-relaxed">
           {meta.description}
         </p>
 

@@ -9,7 +9,8 @@ import FloatingSidebar from '@/components/FloatingSidebar'
 // EDIT THESE VALUES TO CUSTOMIZE YOUR PORTFOLIO
 export const META = {
   name: "Hammami Med Zahreddin",
-  description: "DevOps & MLOps Engineer. I design seamless developer workflows and production-ready AI systems. Obsessed with clean automation, smart tooling, and solving real problems through engineering.",
+  title: "DevOps & MLOps Engineer",
+  description: "I design seamless developer workflows and production-ready AI systems. Obsessed with clean automation, smart tooling, and solving real problems through engineering.",
   cvLink: "/portfolio/resume-Hammami-Zahreddin.pdf", // Place your CV in the public folder
   github: "https://github.com/zahr888",
   linkedin: "https://www.linkedin.com/in/zaher-eddin-hammami",
