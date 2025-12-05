@@ -26,7 +26,7 @@ export default function Hero({ meta }) {
             <div className="absolute -inset-2 bg-gradient-to-r from-accent via-accent-light to-warm-beige rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-cream shadow-2xl">
               <img
-                src="/profile.png"
+                src="/portfolio/profile.png"
                 alt={meta.name}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 onError={(e) => {

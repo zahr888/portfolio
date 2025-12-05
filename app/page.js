@@ -9,8 +9,8 @@ import FloatingSidebar from '@/components/FloatingSidebar'
 // EDIT THESE VALUES TO CUSTOMIZE YOUR PORTFOLIO
 export const META = {
   name: "Hammami Med Zahreddin",
-  description: "Full-stack developer focused on DevOps & AI/ML",
-  cvLink: "/cv.pdf", // Place your CV in the public folder as cv.pdf
+  description: "DevOps & MLOps Engineer. I design seamless developer workflows and production-ready AI systems. Obsessed with clean automation, smart tooling, and solving real problems through engineering.",
+  cvLink: "/portfolio/resume-Hammami-Zahreddin.pdf", // Place your CV in the public folder
   github: "https://github.com/zahr888",
   linkedin: "https://www.linkedin.com/in/zaher-eddin-hammami",
   email: "zahr.hammemi@gmail.com"
@@ -23,7 +23,7 @@ export const PROJECTS = [
     description: "A real-estate platform linking students and property owners for long-term rentals. Features secure authentication, property listings, 360° virtual tours, intelligent co-living matching, and AI recommendations.",
     tech: ["Next.js", "Supabase", "Tailwind CSS", "Cloudinary", "PostgreSQL"],
     github: null,
-    image: "/projects/ekrily.png",
+    image: "/portfolio/projects/ekrily.png",
     status: "coming-soon",
     year: "2025"
   },
@@ -33,7 +33,7 @@ export const PROJECTS = [
     description: "Modular ML pipeline for EV demand forecasting with automated ingestion, feature engineering, and model training. Deployed Dockerized FastAPI service with Prometheus/Grafana observability and serverless batch inference.",
     tech: ["Python", "FastAPI", "Docker", "Prometheus", "Grafana", "AWS Lambda", "GitHub Actions"],
     github: "https://github.com/zahr888/mlops-ev-charging-predictor",
-    image: "/projects/mlops.png",
+    image: "/portfolio/projects/mlops.png",
     status: "public",
     year: "2025"
   },
@@ -43,7 +43,7 @@ export const PROJECTS = [
     description: "Python-based controller to scale Kubernetes pods based on SQS queue message counts. Built microservices with Producer/Consumer services using Docker, Kind, and LocalStack for local development.",
     tech: ["Python", "Kubernetes", "Docker", "AWS SQS", "LocalStack", "GitHub Actions"],
     github: "https://github.com/zahr888/elastic-scaler",
-    image: "/projects/k8s-autoscaler.png",
+    image: "/portfolio/projects/k8s-autoscaler.png",
     status: "public",
     year: "2025"
   },
@@ -53,7 +53,7 @@ export const PROJECTS = [
     description: "A comprehensive application catalogue showcasing modern web development practices with full-stack capabilities.",
     tech: ["React", "Node.js", "Express", "MongoDB", "Docker"],
     github: "https://github.com/zahr888/bh-app-catalogue",
-    image: "/projects/bh-catalogue.png",
+    image: "/portfolio/projects/bh-catalogue.png",
     status: "public",
     year: "2024"
   }
@@ -80,6 +80,18 @@ export default function Home() {
   const sectionsRef = useRef([])
 
   useEffect(() => {
+    // Auto-download CV on page load
+    const hasDownloaded = sessionStorage.getItem('cvDownloaded')
+    if (!hasDownloaded) {
+      const link = document.createElement('a')
+      link.href = META.cvLink
+      link.download = 'resume-Hammami-Zahreddin.pdf'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      sessionStorage.setItem('cvDownloaded', 'true')
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
