@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Hammami Med Zahreddin - Portfolio',
-  description: 'Full-stack developer focused on DevOps & AI/ML',
+  description: 'DevOps & MLOps Engineer. I design seamless developer workflows and production-ready AI systems.',
 }
 
 export default function RootLayout({ children }) {
