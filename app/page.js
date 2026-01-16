@@ -57,6 +57,16 @@ export const PROJECTS = [
     image: "/portfolio/projects/bh-catalogue.png",
     status: "public",
     year: "2024"
+  },
+  {
+    id: 5,
+    title: "AI Grading Evaluation Pipeline",
+    description: "AI grading evaluation pipeline that compares model predictions against reference scores using multiple error and accuracy metrics. Designed to analyze grading quality, track performance per dimension, and validate prediction reliability in an automated and reproducible way.",
+    tech: ["Python", "Matplotlib", "Prompt Engineering", "Pytest"],
+    github: "https://github.com/zahr888/AI-grading-evaluation-pipeline",
+    image: "/portfolio/projects/ai-grading.png",
+    status: "public",
+    year: "2026"
   }
 ]
 
