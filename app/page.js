@@ -9,8 +9,8 @@ import FloatingSidebar from '@/components/FloatingSidebar'
 // EDIT THESE VALUES TO CUSTOMIZE YOUR PORTFOLIO
 export const META = {
   name: "Hammami Med Zahreddin",
-  title: "DevOps & MLOps Engineer",
-  description: "I design seamless developer workflows and production-ready AI systems. Obsessed with clean automation, smart tooling, and solving real problems through engineering.",
+  title: "AI, Full-Stack & Automation Engineer",
+  description: "I build AI-powered products, full-stack apps, and the automation pipelines that keep them running in production. Comfortable across the stack: from ML models and FastAPI backends to Next.js frontends and CI/CD.",
   cvLink: "/portfolio/resume-Hammami-Zahreddin.pdf", // Place your CV in the public folder
   github: "https://github.com/zahr888",
   linkedin: "https://www.linkedin.com/in/zaher-eddin-hammami",
@@ -20,8 +20,18 @@ export const META = {
 export const PROJECTS = [
   {
     id: 1,
+    title: "AI Grading Evaluation Pipeline",
+    description: "Automated pipeline that benchmarks LLM-based grading against reference scores using multiple error and accuracy metrics — tracks per-dimension performance and validates prediction reliability reproducibly.",
+    tech: ["Python", "Prompt Engineering", "Matplotlib", "Pytest"],
+    github: "https://github.com/zahr888/AI-grading-evaluation-pipeline",
+    image: "/portfolio/projects/ai-grading.png",
+    status: "public",
+    year: "2026"
+  },
+  {
+    id: 2,
     title: "Ekrily — Real Estate Platform",
-    description: "A real-estate platform linking students and property owners for long-term rentals. Features secure authentication, property listings, 360° virtual tours, intelligent co-living matching, and AI recommendations.",
+    description: "Full-stack real-estate platform linking students and property owners for long-term rentals. Secure auth, property listings, 360° virtual tours, and AI-driven co-living matching.",
     tech: ["Next.js", "Supabase", "Tailwind CSS", "Cloudinary", "PostgreSQL"],
     github: null,
     image: "/portfolio/projects/ekrily.png",
@@ -29,9 +39,9 @@ export const PROJECTS = [
     year: "2025"
   },
   {
-    id: 2,
+    id: 3,
     title: "End-to-End MLOps Pipeline",
-    description: "Modular ML pipeline for EV demand forecasting with automated ingestion, feature engineering, and model training. Deployed Dockerized FastAPI service with Prometheus/Grafana observability and serverless batch inference.",
+    description: "Modular ML pipeline for EV demand forecasting with automated ingestion, feature engineering, and training. Dockerized FastAPI service with Prometheus/Grafana observability and serverless batch inference.",
     tech: ["Python", "FastAPI", "Docker", "Prometheus", "Grafana", "AWS Lambda", "GitHub Actions"],
     github: "https://github.com/zahr888/mlops-ev-charging-predictor",
     image: "/portfolio/projects/mlops.png",
@@ -39,9 +49,9 @@ export const PROJECTS = [
     year: "2025"
   },
   {
-    id: 3,
+    id: 4,
     title: "Event-Driven Kubernetes Autoscaler",
-    description: "Python-based controller to scale Kubernetes pods based on SQS queue message counts. Built microservices with Producer/Consumer services using Docker, Kind, and LocalStack for local development.",
+    description: "Python controller that scales Kubernetes pods based on SQS queue depth. Producer/consumer microservices built with Docker, Kind, and LocalStack for fully local development.",
     tech: ["Python", "Kubernetes", "Docker", "AWS SQS", "LocalStack", "GitHub Actions"],
     github: "https://github.com/zahr888/elastic-scaler",
     image: "/portfolio/projects/k8s-autoscaler.png",
@@ -49,38 +59,28 @@ export const PROJECTS = [
     year: "2025"
   },
   {
-    id: 4,
+    id: 5,
     title: "BH App Catalogue",
-    description: "A comprehensive application catalogue showcasing modern web development practices with full-stack capabilities.",
+    description: "Full-stack application catalogue built to demonstrate modern web development practices end to end, from API to UI.",
     tech: ["React", "Node.js", "Express", "MongoDB", "Docker"],
     github: "https://github.com/zahr888/bh-app-catalogue",
     image: "/portfolio/projects/bh-catalogue.png",
     status: "public",
     year: "2024"
-  },
-  {
-    id: 5,
-    title: "AI Grading Evaluation Pipeline",
-    description: "AI grading evaluation pipeline that compares model predictions against reference scores using multiple error and accuracy metrics. Designed to analyze grading quality, track performance per dimension, and validate prediction reliability in an automated and reproducible way.",
-    tech: ["Python", "Matplotlib", "Prompt Engineering", "Pytest"],
-    github: "https://github.com/zahr888/AI-grading-evaluation-pipeline",
-    image: "/portfolio/projects/ai-grading.png",
-    status: "public",
-    year: "2026"
   }
 ]
 
 export const SKILLS = {
-  mlops: [
-    "Docker", "Linux", "GitHub Actions", "LocalStack", "AWS", "Prometheus",
-    "Grafana", "NGINX", "Kubernetes", "Terraform"
-  ],
   ml: [
     "Python", "Scikit-learn", "XGBoost", "LightGBM", "Pandas", "NumPy",
-    "Matplotlib", "Seaborn", "Parquet"
+    "Matplotlib", "Seaborn", "Prompt Engineering"
   ],
   backend: [
-    "FastAPI", "PostgreSQL", "Supabase", "SQL"
+    "FastAPI", "Next.js", "PostgreSQL", "Supabase", "SQL"
+  ],
+  mlops: [
+    "Docker", "Linux", "GitHub Actions", "LocalStack", "AWS", "Prometheus",
+    "Grafana", "Kubernetes", "Terraform"
   ],
   tools: [
     "Git/GitHub", "VS Code", "Figma"
@@ -91,21 +91,6 @@ export default function Home() {
   const sectionsRef = useRef([])
 
   useEffect(() => {
-    // Auto-download CV on page load with delay for reliability
-    const hasDownloaded = sessionStorage.getItem('cvDownloaded')
-    if (!hasDownloaded) {
-      setTimeout(() => {
-        const link = document.createElement('a')
-        link.href = META.cvLink
-        link.download = 'resume-Hammami-Zahreddin.pdf'
-        link.style.display = 'none'
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-        sessionStorage.setItem('cvDownloaded', 'true')
-      }, 1000) // 1 second delay for page to fully load
-    }
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

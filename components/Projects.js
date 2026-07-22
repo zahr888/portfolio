@@ -13,7 +13,7 @@ export default function Projects({ projects, cvLink }) {
             Featured <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-muted max-w-xl mx-auto">
-            A selection of my recent work in MLOps, DevOps, and full-stack development.
+            A selection of my recent work in AI, full-stack development, and automation.
           </p>
         </div>
 
